@@ -1,20 +1,16 @@
 const products = [
 
   {
-    name: "エンジン修理",
+    name: "エンジン交換",
     price: 170000,
 
     materials: [
       {
-        id: "engineParts",
+        id: "skit",
         quantity: 1
       },
       {
-        id: "oil",
-        quantity: 1
-      },
-      {
-        id: "filter",
+        id: "metal",
         quantity: 1
       }
     ]
@@ -22,29 +18,29 @@ const products = [
 
 
   {
-    name: "ボディ",
+    name: "ボディ修理",
     price: 150000,
 
     materials: [
       {
-        id: "bodyParts",
+        id: "skit",
         quantity: 1
+      },
+      {
+        id: "kuzu",
+        quantity: 2
       }
     ]
   },
 
 
   {
-    name: "オイル",
+    name: "オイル交換",
     price: 120000,
 
     materials: [
       {
         id: "oil",
-        quantity: 5
-      },
-      {
-        id: "filter",
         quantity: 1
       }
     ]
@@ -57,7 +53,11 @@ const products = [
 
     materials: [
       {
-        id: "engineParts",
+        id: "bolt",
+        quantity: 2
+      },
+      {
+        id: "metal",
         quantity: 2
       }
     ]
@@ -70,16 +70,16 @@ const products = [
 
     materials: [
       {
-        id: "engineParts",
-        quantity: 0.5
+        id: "fire",
+        quantity: 1
       }
     ]
   },
 
 
   {
-    name: "バッテリー",
-    price: 90000,
+    name: "バッテリー交換",
+    price: 170000,
 
     materials: [
       {
@@ -96,7 +96,15 @@ const products = [
 
     materials: [
       {
-        id: "bodyParts",
+        id: "rub",
+        quantity: 1
+      },
+      {
+        id: "bolt",
+        quantity: 1
+      },
+      {
+        id: "metal",
         quantity: 1
       }
     ]
@@ -104,15 +112,43 @@ const products = [
 
 
   {
-    name: "タイヤ",
+    name: "タイヤ交換",
     price: 110000,
 
     materials: [
       {
-        id: "tire",
+        id: "rub",
+        quantity: 2
+      },
+      {
+        id: "bolt",
         quantity: 1
       }
     ]
+  },
+
+
+  {
+    name: "電気系統の修理",
+    price: 270000,
+
+    materials: [
+      {
+        id: "skit",
+        quantity: 2
+      },
+      {
+        id: "bolt",
+        quantity: 2
+      },
+      {
+        id: "dnc",
+        quantity: 2
+      }
+    ]
   }
+
+
+
 
 ];
