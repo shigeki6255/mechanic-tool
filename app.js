@@ -225,7 +225,63 @@ function renderCurrentMaterials() {
 // 累積材料
 // ============================
 
-const cumulativeMaterials = {};
+// 保存用の名前
+const cumulativeStorageKey =
+  "mechanicToolCumulativeMaterials";
+
+
+// ============================
+// 累積材料を読み込む
+// ============================
+
+function loadCumulativeMaterials() {
+
+  const savedData =
+    localStorage.getItem(
+      cumulativeStorageKey
+    );
+
+
+  if (!savedData) {
+    return {};
+  }
+
+
+  try {
+
+    return JSON.parse(savedData);
+
+  } catch (error) {
+
+    console.warn(
+      "累積材料の読み込みに失敗しました。",
+      error
+    );
+
+    return {};
+
+  }
+
+}
+
+
+// 保存されている累積材料を読み込む
+const cumulativeMaterials =
+  loadCumulativeMaterials();
+
+
+// ============================
+// 累積材料を保存
+// ============================
+
+function saveCumulativeMaterials() {
+
+  localStorage.setItem(
+    cumulativeStorageKey,
+    JSON.stringify(cumulativeMaterials)
+  );
+
+}
 
 
 // ============================
@@ -299,6 +355,7 @@ function renderCumulativeMaterials() {
     table.appendChild(row);
 
   });
+
 }
 
 
@@ -422,6 +479,10 @@ function billing() {
   });
 
 
+  // ★ 累積材料を保存
+  saveCumulativeMaterials();
+
+
   // 累積材料を表示
   renderCumulativeMaterials();
 
@@ -457,6 +518,12 @@ function resetCumulativeMaterials() {
     delete cumulativeMaterials[materialId];
 
   });
+
+
+  // ★ 保存されている累積材料も削除
+  localStorage.removeItem(
+    cumulativeStorageKey
+  );
 
 
   renderCumulativeMaterials();
