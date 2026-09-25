@@ -148,7 +148,15 @@ const products = [
     ]
   }
 
+,
 
+
+  {
+    name: "出張修理",
+    price: 200000,
+
+    materials: [    ]
+  }
 
 
 ];
