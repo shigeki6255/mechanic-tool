@@ -42,7 +42,7 @@ const materials = {
 
   dnc: {
     name: "電池",
-    price: 20000
+    price: 27000
   }
 
 };
