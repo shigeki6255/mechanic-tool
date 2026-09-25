@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メカニック 見積作成ツール</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>メカニック 見積作成ツール</h1>
+
+
+    <!-- 商品一覧 -->
+    <section>
+      <h2>商品一覧</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>選択</th>
+            <th>サービス名</th>
+            <th>材料原価</th>
+            <th>作業価格</th>
+          </tr>
+        </thead>
+
+        <tbody id="productsTable">
+        </tbody>
+      </table>
+
+    </section>
+
+
+    <!-- 合計 -->
+    <section class="summary">
+      <h2>合計</h2>
+
+      <div>
+        材料原価：
+        <span id="totalCost">0</span> 円
+      </div>
+
+      <div>
+        請求金額：
+        <span id="totalSales">0</span> 円
+      </div>
+
+      <div class="profit">
+        粗利：
+        <span id="profit">0</span> 円
+      </div>
+    </section>
+
+
+    <!-- 請求ボタン -->
+    <div class="billing-button-area">
+      <button id="billingButton" type="button">
+        請求
+      </button>
+    </div>
+
+
+    <!-- 使用材料（今回） -->
+    <section class="used-materials">
+      <h2>使用材料（今回）</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>材料名</th>
+            <th>必要数量</th>
+          </tr>
+        </thead>
+
+        <tbody id="usedMaterialsTable">
+        </tbody>
+      </table>
+    </section>
+
+
+    <!-- 使用材料（累積） -->
+    <section class="used-materials cumulative-materials">
+      <h2>使用材料（累積）</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>材料名</th>
+            <th>使用数量</th>
+          </tr>
+        </thead>
+
+        <tbody id="cumulativeMaterialsTable">
+        </tbody>
+      </table>
+
+      <!-- リセットボタン -->
+      <div class="reset-button-area">
+        <button id="resetMaterialsButton" type="button">
+          使用材料をリセット
+        </button>
+      </div>
+    </section>
+
+
+    <!-- 材料マスター -->
+    <section>
+      <h2>材料マスター</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>材料名</th>
+            <th>仕入価格</th>
+          </tr>
+        </thead>
+
+        <tbody id="materialsTable">
+        </tbody>
+      </table>
+
+      <p class="note">
+        ※ 仕入価格を変更する場合は materials.js を編集してください。
+      </p>
+    </section>
+
+  </div>
+
+
+  <script src="materials.js"></script>
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
